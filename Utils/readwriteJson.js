@@ -3,6 +3,8 @@ let path = require('path');
 let filePath = path.join(__dirname, '../model/users.json');
 
 console.log(filePath);
+
+//to read file asynchronously 
 getUserDataAsync = () => {
   return new Promise(function (resolve, reject) {
     fs.readFile(filePath, "utf8", function (err, data) {
@@ -12,7 +14,7 @@ getUserDataAsync = () => {
   });
 };
 
-
+//to read file synchronously 
 getUserDataSync = () =>{
 
 const data = fs.readFileSync(filePath,"utf8");
